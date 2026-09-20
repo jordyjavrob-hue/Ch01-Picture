@@ -1,84 +1,107 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
+ * This picture shows a person standing outside a small house
+ * on a sunny day.
  *
- * This class was written as an early example for teaching Java with BlueJ.
- * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author Jordy Robalino
+ * @version 09.20.2026
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
+    private Square house;
     private Triangle roof;
+    private Square door;
+    private Square window1;
+    private Square window2;
     private Circle sun;
-    private boolean drawn;
+    private Person person;
 
     /**
-     * Constructor for objects of class Picture
+     * Constructor for objects of class Picture.
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        house = new Square();
+        roof = new Triangle();
+        door = new Square();
+        window1 = new Square();
+        window2 = new Square();
         sun = new Circle();
-        drawn = false;
+        person = new Person();
     }
 
     /**
-     * Draw this picture.
+     * Draw the picture.
      */
     public void draw()
     {
-        if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
-            
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
-            drawn = true;
-        }
+        house.changeColor("red");
+        house.changeSize(120);
+        house.moveHorizontal(40);
+        house.moveVertical(90);
+        house.makeVisible();
+
+        roof.changeColor("green");
+        roof.changeSize(70, 140);
+        roof.moveHorizontal(30);
+        roof.moveVertical(55);
+        roof.makeVisible();
+
+        door.changeColor("black");
+        door.changeSize(40);
+        door.moveHorizontal(75);
+        door.moveVertical(150);
+        door.makeVisible();
+
+        window1.changeColor("blue");
+        window1.changeSize(25);
+        window1.moveHorizontal(50);
+        window1.moveVertical(115);
+        window1.makeVisible();
+
+        window2.changeColor("blue");
+        window2.changeSize(25);
+        window2.moveHorizontal(115);
+        window2.moveVertical(115);
+        window2.makeVisible();
+
+        sun.changeColor("yellow");
+        sun.changeSize(50);
+        sun.moveHorizontal(200);
+        sun.moveVertical(-30);
+        sun.makeVisible();
+
+        person.changeColor("black");
+        person.changeSize(60, 30);
+        person.moveHorizontal(-260);
+        person.moveVertical(5);
+        person.makeVisible();
     }
 
     /**
-     * Change this picture to black/white display
+     * Change the picture to black and white.
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
+        house.changeColor("white");
         roof.changeColor("black");
+        door.changeColor("black");
+        window1.changeColor("black");
+        window2.changeColor("black");
         sun.changeColor("black");
+        person.changeColor("black");
     }
 
     /**
-     * Change this picture to use color display
+     * Return the picture to its original colors.
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
+        house.changeColor("red");
         roof.changeColor("green");
+        door.changeColor("black");
+        window1.changeColor("blue");
+        window2.changeColor("blue");
         sun.changeColor("yellow");
+        person.changeColor("black");
     }
 }
