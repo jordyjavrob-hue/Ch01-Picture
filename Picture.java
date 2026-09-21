@@ -42,8 +42,8 @@ public class Picture
 
         roof.changeColor("green");
         roof.changeSize(70, 140);
-        roof.moveHorizontal(201);
-        roof.moveVertical(0);
+        roof.moveHorizontal(198);
+        roof.moveVertical(-10);
         roof.makeVisible();
 
         door.changeColor("black");
